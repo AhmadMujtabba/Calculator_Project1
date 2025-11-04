@@ -1,23 +1,37 @@
 let finalExpres='';
+let legalCharArr=['+','-','/','*','**',')','('];
+
 (function(){document.querySelectorAll("button").forEach((btn) => {
     btn.addEventListener("click", (event) => {
-        if(event.target.value !== 'clear')
+        if(event.target.value !== 'clear' && event.target.value !== 'equal')
         {
-            finalExpres.concat(event.target.value)
-            console.log("You clicked:", event.target.value);
+            finalExpres+=event.target.value
+            setValue(finalExpres)
+            breakString(finalExpres)
+        }else if(event.target.value == 'equal'){
+            console.log("start calculation");
+
         }
         else
         {
-            document.querySelector('.input').value=''
+            setValue('')
         }
     });
   })}());
 
-function expression(input){
-    let expresion=input;
-    console.log(expresion);
+
+function setValue(value){
+    document.querySelector('.screen').value=value
+    if(value=='')
+    {
+        finalExpres=''
+    }
 }
 
-function setValue(){
-    document.querySelector('.input').value=finalExpres
+function calculate(){
+
+}
+
+function breakString(str){
+    console.log(str.split(''))
 }
