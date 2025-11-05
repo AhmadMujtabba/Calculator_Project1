@@ -1,37 +1,55 @@
 let finalExpres='';
-let legalCharArr=['+','-','/','*','**',')','('];
 
-(function(){document.querySelectorAll("button").forEach((btn) => {
+(function(){
+    document.querySelectorAll("button").forEach((btn) => {
     btn.addEventListener("click", (event) => {
         if(event.target.value !== 'clear' && event.target.value !== 'equal')
         {
             finalExpres+=event.target.value
-            setValue(finalExpres)
-            breakString(finalExpres)
+            setScreenValue(finalExpres)
         }else if(event.target.value == 'equal'){
-            console.log("start calculation");
+            calculate(finalExpres)
 
         }
         else
         {
-            setValue('')
+            finalExpres=''
         }
     });
   })}());
 
+function handleInputChange(event){
+    finalExpres=event.target.value
+    setScreenValue(finalExpres)
+}
 
-function setValue(value){
+function setScreenValue(value){
     document.querySelector('.screen').value=value
-    if(value=='')
-    {
-        finalExpres=''
+    inputValidator(value)
+}
+
+function calculate(expr){
+    if(inputValidator(expr))
+    {   
+    return result=eval(expr)
+    }
+    else{
+        
     }
 }
 
-function calculate(){
-
-}
-
-function breakString(str){
-    console.log(str.split(''))
+function inputValidator(input){
+    //Check for illegal char
+    let legalCharArr=['0','1','2','3','4','5','6','7','8','9','+','-','*','^','/','(',')','.']
+    for(let i=0;i<input.length;i++)
+    {
+        let char=input[i]
+        if(!legalCharArr.includes(char))
+        {
+            return false;
+        }
+    }
+    //Check for illegal expression
+    
+    return true
 }

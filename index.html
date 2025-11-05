@@ -7,7 +7,13 @@
     <div class="main-div">
       <table class="layout">
         <tr class="row">
-          <td colspan="5"><input type="text" class="screen" /></td>
+          <td colspan="5">
+            <input
+              type="text"
+              class="screen"
+              oninput="handleInputChange(event)"
+            />
+          </td>
         </tr>
         <tr class="row">
           <td><button class="btn" value="1">1</button></td>
@@ -28,7 +34,7 @@
           <td><button class="btn" value="8">8</button></td>
           <td><button class="btn" value="9">9</button></td>
           <td><button class="btn" value="+">+</button></td>
-          <td><button class="btn" value="**">**</button></td>
+          <td><button class="btn" value="^">^</button></td>
         </tr>
         <tr class="row">
           <td><button class="btn" value="clear">c</button></td>
