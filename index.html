@@ -5,39 +5,60 @@
   </head>
   <body>
     <div class="main-div">
-      <table class="layout">
-        <tr class="row">
-          <td colspan="5"><input type="text" class="screen" /></td>
-        </tr>
-        <tr class="row">
-          <td><button class="btn" value="1">1</button></td>
-          <td><button class="btn" value="2">2</button></td>
-          <td><button class="btn" value="3">3</button></td>
-          <td><button class="btn" value="(">(</button></td>
-          <td><button class="btn" value=")">)</button></td>
-        </tr>
-        <tr class="row">
-          <td><button class="btn" value="4">4</button></td>
-          <td><button class="btn" value="5">5</button></td>
-          <td><button class="btn" value="6">6</button></td>
-          <td><button class="btn" value="*">*</button></td>
-          <td><button class="btn" value="/">/</button></td>
-        </tr>
-        <tr class="row">
-          <td><button class="btn" value="7">7</button></td>
-          <td><button class="btn" value="8">8</button></td>
-          <td><button class="btn" value="9">9</button></td>
-          <td><button class="btn" value="+">+</button></td>
-          <td><button class="btn" value="**">**</button></td>
-        </tr>
-        <tr class="row">
-          <td><button class="btn" value="clear">c</button></td>
-          <td><button class="btn" value="0">0</button></td>
-          <td><button class="btn" value=".">.</button></td>
-          <td><button class="btn" value="-">-</button></td>
-          <td><button class="btn" value="equal">=</button></td>
-        </tr>
-      </table>
+      <div class="calculator">
+        <table class="layout">
+          <tr class="row">
+            <td colspan="6">
+              <input
+                type="text"
+                class="screen"
+                oninput="handleInputChange(event)"
+              />
+            </td>
+          </tr>
+          <tr class="row">
+            <td colspan="6">
+              <input type="text" class="result-screen" disabled />
+            </td>
+          </tr>
+          <tr class="row">
+            <td><button class="btn" value="1">1</button></td>
+            <td><button class="btn" value="2">2</button></td>
+            <td><button class="btn" value="3">3</button></td>
+            <td><button class="btn" value="(">(</button></td>
+            <td><button class="btn" value=")">)</button></td>
+            <td><button class="btn" value="sin()">sin</button></td>
+          </tr>
+          <tr class="row">
+            <td><button class="btn" value="4">4</button></td>
+            <td><button class="btn" value="5">5</button></td>
+            <td><button class="btn" value="6">6</button></td>
+            <td><button class="btn" value="*">*</button></td>
+            <td><button class="btn" value="/">/</button></td>
+            <td><button class="btn" value="cos()">cos</button></td>
+          </tr>
+          <tr class="row">
+            <td><button class="btn" value="7">7</button></td>
+            <td><button class="btn" value="8">8</button></td>
+            <td><button class="btn" value="9">9</button></td>
+            <td><button class="btn" value="+">+</button></td>
+            <td><button class="btn" value="**">^</button></td>
+            <td><button class="btn" value="tan()">tan</button></td>
+          </tr>
+          <tr class="row">
+            <td><button class="btn" value="clear">c</button></td>
+            <td><button class="btn" value="0">0</button></td>
+            <td><button class="btn" value=".">.</button></td>
+            <td><button class="btn" value="-">-</button></td>
+            <td><button class="btn" value="sqrt()">sqrt</button></td>
+            <td><button class="btn" value="log()">log</button></td>
+          </tr>
+          <tr class="row">
+            <td colspan="6"><button class="btn" value="equal">=</button></td>
+          </tr>
+        </table>
+      </div>
+      <div class="history"></div>
     </div>
     <script src="./script.js"></script>
   </body>
